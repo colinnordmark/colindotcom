@@ -1,3 +1,4 @@
+import { desc } from "drizzle-orm";
 import Link from "next/link";
 import { db } from "~/server/db";
 
@@ -16,8 +17,9 @@ const mockImages = mockUrls.map((url, index) => ({
 
 export default async function HomePage() {
   
-  const posts = await db.query.posts.findMany();
-  console.log(posts);
+  const images = await db.query.images.findMany({
+    orderBy:(model, { desc }) => desc(model.id), 
+  });
 
   return (
     <main className="">
@@ -25,17 +27,11 @@ export default async function HomePage() {
         HELLO
       </h1>
       <div className="flex flex-wrap gap-4">
-        {posts.map((post) => (
-          <article key={post.id}>
-            <p>{post.name}</p>
-          </article>
-        ))}
-      </div>
-      <div className="flex flex-wrap gap-4">
-        {mockImages.map((image) => (
-          <div key={image.id} className="w-48">
+        {images.map((image) => (
+          <article key={image.id}>
             <img src={image.url} />
-          </div>
+            <p>{image.name}</p>
+          </article>
         ))}
       </div>
     </main>
