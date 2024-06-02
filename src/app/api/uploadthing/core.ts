@@ -19,11 +19,21 @@ export const ourFileRouter = {
     })
     .onUploadComplete(async ({ metadata, file }) => {
       console.log("Upload complete for userId:", metadata.userId);      
+      
+      if (!metadata.userId) {
+        throw new Error('User ID is required');
+      }
+      
       await db.insert(images).values({
         name: file.name,
         url: file.url,
         userId: metadata.userId,
       });
+      /*await db.insert(images).values({
+        name: file.name,
+        url: file.url,
+        userId: metadata.userId,
+      });*/
       return { uploadedBy: metadata.userId };
     }),
 } satisfies FileRouter;
