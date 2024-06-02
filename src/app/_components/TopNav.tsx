@@ -10,15 +10,15 @@ export const TopNav = () => {
           <li>
             <a href="/about">About</a>
           </li>
+          <div>
+            <SignedOut>
+              <SignInButton />
+            </SignedOut>
+            <SignedIn>
+              <SignOutButton />
+            </SignedIn>
+          </div>
         </ul>
-        <div>
-          <SignedOut>
-            <SignInButton />
-          </SignedOut>
-          <SignedIn>
-            <SignOutButton />
-          </SignedIn>
-        </div>
       </nav>
   );
 };
