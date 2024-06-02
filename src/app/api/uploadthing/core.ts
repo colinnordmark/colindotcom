@@ -9,7 +9,7 @@ const f = createUploadthing();
 // FileRouter for your app, can contain multiple FileRoutes
 export const ourFileRouter = {
   // Define as many FileRoutes as you like, each with a unique routeSlug
-  imageUploader: f({ image: { maxFileSize: "4MB", maxFileCount: 40 } })
+  imageUploader: f({ image: { maxFileSize: "4MB"} })
     .middleware(async ({ req }) => {
       const user = auth();
  
@@ -23,17 +23,12 @@ export const ourFileRouter = {
       if (!metadata.userId) {
         throw new Error('User ID is required');
       }
-      
+
       await db.insert(images).values({
         name: file.name,
         url: file.url,
         userId: metadata.userId,
       });
-      /*await db.insert(images).values({
-        name: file.name,
-        url: file.url,
-        userId: metadata.userId,
-      });*/
       return { uploadedBy: metadata.userId };
     }),
 } satisfies FileRouter;
