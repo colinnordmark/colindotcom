@@ -1,5 +1,6 @@
 import { desc } from "drizzle-orm";
 import Link from "next/link";
+import { SignedIn } from "@clerk/nextjs";
 import { db } from "~/server/db";
 
 export const dynamic = "force-dynamic";
@@ -15,18 +16,13 @@ const mockImages = mockUrls.map((url, index) => ({
   url
 }));
 
-export default async function HomePage() {
-  
+async function Images() {
   const images = await db.query.images.findMany({
     orderBy:(model, { desc }) => desc(model.id), 
   });
 
   return (
-    <main className="">
-      <h1 className=" text-white">
-        HELLO
-      </h1>
-      <div className="flex flex-wrap gap-4">
+    <div className="flex flex-wrap gap-4">
         {images.map((image) => (
           <article key={image.id}>
             <img src={image.url} />
@@ -34,6 +30,20 @@ export default async function HomePage() {
           </article>
         ))}
       </div>
+  )
+}
+export default async function HomePage() {
+  
+  
+
+  return (
+    <main className="">
+      <h1 className=" text-white">
+        HELLO
+      </h1>
+      <SignedIn>
+        <Images />
+      </SignedIn>
     </main>
   );
 }
