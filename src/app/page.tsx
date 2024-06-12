@@ -1,8 +1,4 @@
-import { desc } from "drizzle-orm";
-import Link from "next/link";
 import { SignedIn } from "@clerk/nextjs";
-import { db } from "~/server/db";
-import { get } from "http";
 import { getImages } from "~/server/queries";
 import Image from "next/image";
 
