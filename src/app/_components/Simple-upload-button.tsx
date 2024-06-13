@@ -38,7 +38,7 @@ const UploadSVG = () => {
     viewBox="0 0 24 24"
     strokeWidth={1.5}
     stroke="currentColor"
-    className="size-6"
+    className="h-6 w-6"
   >
     <path
       strokeLinecap="round"
@@ -48,10 +48,30 @@ const UploadSVG = () => {
   </svg>;
 }
 
+const LoadingSpinner = () => {
+  return (
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+      stroke="white"
+    >
+      <g className="spinner_V8m1">
+        <circle cx="12" cy="12" r="9.5" fill="none" stroke-width="3"></circle>
+      </g>
+    </svg>
+  );
+}
+
 export function SimpleUploadButton() {
   const { inputProps } = useUploadThingInputProps("imageUploader", {
     onUploadBegin() {
-      toast.info("Uploading...",{
+      toast(
+        <div className="flex gap-2 text-white items-center">
+          <LoadingSpinner />
+          <span>Uploading...</span>
+        </div>,{
           duration: 50000,
           id: "upload-begin"
       });
