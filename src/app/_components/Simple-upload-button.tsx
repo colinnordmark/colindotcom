@@ -50,8 +50,15 @@ const UploadSVG = () => {
 
 export function SimpleUploadButton() {
   const { inputProps } = useUploadThingInputProps("imageUploader", {
+    onUploadBegin() {
+      toast.info("Uploading...",{
+          duration: 50000,
+          id: "upload-begin"
+      });
+    },
     onClientUploadComplete() {
       router.refresh();
+      toast.dismiss("upload-begin");
       toast.success("Upload complete");
     }
   });
