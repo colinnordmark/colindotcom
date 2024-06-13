@@ -5,6 +5,7 @@ import { TopNav } from "./_components/TopNav";
 import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
 import { extractRouterConfig } from "uploadthing/server";
 import { ourFileRouter } from "./api/uploadthing/core";
+import { Toaster } from "./_components/Toaster";
 
 export const metadata = {
   title: "colinnordmark",
@@ -34,6 +35,7 @@ export default function RootLayout({
         <body className={`font-sans ${GeistSans.variable}`}>
           <TopNav/>
           {children}
+          <Toaster />
         </body>
       </html>
     </ClerkProvider>
