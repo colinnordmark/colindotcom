@@ -40,7 +40,7 @@ const UploadSVG = () => {
     viewBox="0 0 24 24"
     strokeWidth={1.5}
     stroke="currentColor"
-    className="h-6 w-6"
+    className="h-5 w-5"
   >
     <path
       strokeLinecap="round"
@@ -91,7 +91,7 @@ export function SimpleUploadButton() {
 
   return (
     <div>
-      <label className="flex flex-row cursor-pointer gap-2" htmlFor="upload-button">
+      <label className="flex flex-row cursor-pointer gap-2 items-center" htmlFor="upload-button">
         <UploadSVG />
         <p>
           Upload

@@ -8,16 +8,16 @@ import { SimpleUploadButton } from "~/app/_components/Simple-upload-button";
 export const SideNav = () => {
 
   return (
-    <nav className=" fixed flex min-w-32 translate-x-2 translate-y-2 justify-between rounded-md backdrop-blur-sm bg-slate-900/75 p-4">
+    <nav className=" fixed flex min-w-32 translate-x-4 translate-y-4 justify-between rounded-md backdrop-blur-sm bg-slate-900/75 p-4">
       <div className="flex flex-col gap-6">
-        <a className="flex flex-row gap-2" href="/">
+        <a className="flex flex-row gap-2 items-center" href="/">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="size-6"
+            className="size-5"
             >
             <path
               strokeLinecap="round"
@@ -27,14 +27,14 @@ export const SideNav = () => {
           </svg>
           <p>Home</p>
         </a>
-        <a className=" flex flex-row gap-2" href="/about">
+        <a className=" flex flex-row gap-2 items-center" href="/about">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             stroke-width="1.5"
             stroke="currentColor"
-            class="size-6"
+            class="size-5"
           >
             <path
               stroke-linecap="round"
@@ -46,14 +46,14 @@ export const SideNav = () => {
         </a>
         <SignedOut>
           <SignInButton>
-          <button className=" flex flex-row gap-2 text-left">
+          <button className=" flex flex-row gap-2 text-left items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke-width="1.5"
                 stroke="currentColor"
-                class="size-6"
+                class="size-5"
               >
                 <path
                   stroke-linecap="round"
@@ -67,14 +67,14 @@ export const SideNav = () => {
         </SignedOut>
         <SignedIn>
           <SignOutButton>
-            <button className=" flex flex-row gap-2 text-left">
+            <button className=" flex flex-row gap-2 text-left items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke-width="1.5"
                 stroke="currentColor"
-                class="size-6"
+                class="size-5"
               >
                 <path
                   stroke-linecap="round"
