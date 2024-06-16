@@ -1,7 +1,7 @@
 import "~/styles/globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import { GeistSans } from "geist/font/sans";
-import { TopNav } from "./_components/TopNav";
+import { SideNav } from "./_components/SideNav";
 import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
 import { extractRouterConfig } from "uploadthing/server";
 import { ourFileRouter } from "./api/uploadthing/core";
@@ -34,8 +34,8 @@ export default function RootLayout({
             routerConfig={extractRouterConfig(ourFileRouter)}
           />
         <html lang="en">
-          <body className={`font-sans ${GeistSans.variable}`}>
-            <TopNav/>
+          <body className={` flex flex-row font-sans ${GeistSans.variable}`}>
+            <SideNav/>
             {children}
             <Toaster />
           </body>
