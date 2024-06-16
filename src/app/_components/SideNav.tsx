@@ -1,8 +1,6 @@
 "use client";
 
 import { SignedOut, SignedIn, SignOutButton, SignInButton, UserButton } from "@clerk/nextjs";
-import { useRouter } from "next/navigation";
-import { UploadButton } from "~/utils/uploadthing";
 import { SimpleUploadButton } from "~/app/_components/Simple-upload-button";
 
 export const SideNav = () => {
@@ -34,7 +32,7 @@ export const SideNav = () => {
             viewBox="0 0 24 24"
             stroke-width="1.5"
             stroke="currentColor"
-            class="size-5"
+            className="size-5"
           >
             <path
               stroke-linecap="round"
@@ -53,7 +51,7 @@ export const SideNav = () => {
                 viewBox="0 0 24 24"
                 stroke-width="1.5"
                 stroke="currentColor"
-                class="size-5"
+                className="size-5"
               >
                 <path
                   stroke-linecap="round"
@@ -74,7 +72,7 @@ export const SideNav = () => {
                 viewBox="0 0 24 24"
                 stroke-width="1.5"
                 stroke="currentColor"
-                class="size-5"
+                className="size-5"
               >
                 <path
                   stroke-linecap="round"
