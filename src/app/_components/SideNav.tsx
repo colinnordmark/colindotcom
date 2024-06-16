@@ -8,7 +8,7 @@ import { SimpleUploadButton } from "~/app/_components/Simple-upload-button";
 export const SideNav = () => {
 
   return (
-    <nav className=" fixed flex min-w-32 translate-x-2 translate-y-2 justify-between rounded-md bg-slate-900 p-4">
+    <nav className=" fixed flex min-w-32 translate-x-2 translate-y-2 justify-between rounded-md backdrop-blur-sm bg-slate-900/75 p-4">
       <div className="flex flex-col gap-6">
         <a className="flex flex-row gap-2" href="/">
           <svg
