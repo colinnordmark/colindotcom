@@ -27,9 +27,6 @@ async function Images() {
 export default async function HomePage() {
   return (
     <main className="">
-      <h1 className=" text-white">
-        HELLO
-      </h1>
       <SignedIn>
         <Images />
       </SignedIn>
