@@ -91,11 +91,11 @@ export function SimpleUploadButton() {
 
   return (
     <div>
-      <label className="flex flex-row" htmlFor="upload-button">
-        <p className=" mr-2">
+      <label className="flex flex-row cursor-pointer gap-2" htmlFor="upload-button">
+        <UploadSVG />
+        <p>
           Upload
         </p>
-        <UploadSVG />
       </label>
       <input
         id="upload-button"
